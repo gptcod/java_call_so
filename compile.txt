@@ -1,0 +1,3 @@
+g++ -fPIC -D_REENTRANT -I/usr/java/jdk1.6.0_38/include/linux -I/usr/java/jdk1.6.0_38/include -c bloom_filter.cpp murmur.cpp dablooms.cpp
+
+g++ -shared bloom_filter.o dablooms.o murmur.o -o libgoodluck.so
