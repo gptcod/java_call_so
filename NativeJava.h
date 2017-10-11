@@ -9,11 +9,43 @@ extern "C" {
 #endif
 /*
  * Class:     NativeJava
- * Method:    match_white_dns
- * Signature: (Ljava/lang/String;)I
+ * Method:    generate_bloom_file
+ * Signature: (Ljava/lang/String;Ljava/lang/String;)I
  */
-JNIEXPORT jint JNICALL Java_NativeJava_match_1white_1dns
+JNIEXPORT jint JNICALL Java_NativeJava_generate_1bloom_1file
+  (JNIEnv *, jobject, jstring, jstring);
+
+/*
+ * Class:     NativeJava
+ * Method:    new_counting_bloom_from_file
+ * Signature: (ILjava/lang/String;)J
+ */
+JNIEXPORT jlong JNICALL Java_NativeJava_new_1counting_1bloom_1from_1file
+  (JNIEnv *, jobject, jint, jstring);
+
+/*
+ * Class:     NativeJava
+ * Method:    counting_bloom_check
+ * Signature: (JLjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_NativeJava_counting_1bloom_1check
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     NativeJava
+ * Method:    get_main_domain
+ * Signature: (Ljava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_NativeJava_get_1main_1domain
   (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     NativeJava
+ * Method:    free_counting_bloom
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_NativeJava_free_1counting_1bloom
+  (JNIEnv *, jobject, jlong);
 
 #ifdef __cplusplus
 }
